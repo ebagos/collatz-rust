@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package collatz;
+
+service Collatz {
+    rpc calculate(CollatzRequest) returns (CollatzResponse) {}
+}
+
+message CollatzRequest {
+    int64 index_from = 1;
+    int64 index_to = 2;
+}
+
+message CollatzResponse {
+    int64 max_length = 1;
+    int64 index = 2;
+}
